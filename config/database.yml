@@ -53,3 +53,4 @@ production:
   database: order_site_api_production
   username: order_site_api
   password: <%= ENV["ORDER_SITE_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
