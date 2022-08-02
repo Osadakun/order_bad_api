@@ -1,10 +1,6 @@
-class ApplicationController < ActionController::API
-  #sorceryが作成するメソッド。ログインしてない時not_authenticatedメソッドを発火する
-  before_action :require_login
+class ApplicationController < ActionController::Base
+  include DeviseTokenAuth::Concerns::SetUserByToken
 
-  protected
-
-  def not_authenticated
-    redirect_to login_url
-  end
+  skip_before_action :verify_authenticity_token
+  helper_method :current_user, :user_signed_in?, :authenticate_user!
 end
