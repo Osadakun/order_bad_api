@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member1: MyString
+  member2: MyString
+  member3: MyString
+  member4: MyString
+  member5: MyString
+  member6: MyString
+  member7: MyString
+  team_id: 1
+
+two:
+  member1: MyString
+  member2: MyString
+  member3: MyString
+  member4: MyString
+  member5: MyString
+  member6: MyString
+  member7: MyString
+  team_id: 1

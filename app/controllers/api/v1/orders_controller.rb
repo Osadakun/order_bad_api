@@ -1,5 +1,5 @@
-class Api::V1::PostsController < ApplicationController
-	before_action :authenticate_api_v1_user!, only: [:create, :update, :destroy]
+class Api::V1::OrdersController < ApplicationController
+  before_action :authenticate_api_v1_user!, only: [:create, :update, :destroy]
 	def index
 			posts = Post.all.order(created_at: :desc)
 			posts_array = posts.map do |post|
@@ -13,8 +13,8 @@ class Api::V1::PostsController < ApplicationController
 	end
 
 	def show
-		order = Order.find(params[:id])
-		order_list = {
+    order = Order.find_by(team_id: params[:team_id])
+    order_list = {
 			id: order.id,
 			enemy_name: order.enemy_name,
 			first_double_1: order.first_double_1,
