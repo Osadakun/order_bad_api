@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
   # idカラムを基にordersテーブルのuser_idにアクセスできる
-  has_one :order
+  has_many :order
   # idカラムを基にteamsテーブルのuser_idにアクセスできる
-  has_one :team
+  has_many :team
   validates :name, presence: true, uniqueness: true
 end
