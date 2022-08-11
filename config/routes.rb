@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :posts do
+      resources :orders, param: :team_id do
         member do
-          resources :likes, only: ["create"]
+          get :have_team_all
+          get :create_order
         end
       end
-      resources :likes, only: ["destroy"]
+      get '/orders/create/:id' => "orders#create"
       resources :users
+      # 継承しているdeviseコントローラーを編集したいときにこういう記述をする
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         registrations: 'api/v1/auth/registrations'
       }
