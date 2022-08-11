@@ -35,7 +35,7 @@ class Api::V1::OrdersController < ApplicationController
     member_list = {
       user_name: members.user_name,
       name: members.name,
-      member1: [
+      members: [
         members.member1,
         members.member2,
         members.member3,
@@ -44,13 +44,6 @@ class Api::V1::OrdersController < ApplicationController
         members.member6,
         members.member7,
       ],
-      # member1: members.member1,
-      # member2: members.member2,
-      # member3: members.member3,
-      # member4: members.member4,
-      # member5: members.member5,
-      # member6: members.member6,
-      # member7: members.member7,
     }
     render json: member_list
   end
