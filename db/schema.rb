@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_08_153231) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_17_151137) do
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "name"
     t.text "enemy_name"
@@ -19,18 +19,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_08_153231) do
     t.text "first_single"
     t.text "second_double_1"
     t.text "second_double_2"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "team_id"
-  end
-
-  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.string "event_name"
+    t.bigint "teams_id"
+    t.bigint "users_id"
+    t.index ["teams_id"], name: "index_orders_on_teams_id"
+    t.index ["users_id"], name: "index_orders_on_users_id"
   end
 
   create_table "teams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -41,12 +36,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_08_153231) do
     t.string "member5"
     t.string "member6"
     t.string "member7"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "order_id"
-    t.string "name"
-    t.string "user_name"
+    t.string "event_name"
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_teams_on_users_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -74,5 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_08_153231) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "posts", "users"
+  add_foreign_key "orders", "teams", column: "teams_id"
+  add_foreign_key "orders", "users", column: "users_id"
+  add_foreign_key "teams", "users", column: "users_id"
 end

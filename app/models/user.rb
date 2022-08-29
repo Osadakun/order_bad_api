@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :posts, dependent: :destroy
-  # idカラムを基にordersテーブルのuser_idにアクセスできる
+  # idカラムを基にordersテーブルのusers_idにアクセスできる
   has_many :order
-  # idカラムを基にteamsテーブルのuser_idにアクセスできる
+  # idカラムを基にteamsテーブルのusers_idにアクセスできる
   has_many :team
   validates :name, presence: true, uniqueness: true
 end
