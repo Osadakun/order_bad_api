@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         end
       end
       get '/orders/create/:id' => 'orders#create'
-      get '/orders/show_order/:id' => 'orders#show_order'
+      get '/orders/show_order/:event_name/:users_id' => 'orders#show_order'
       resources :users
       # 継承しているdeviseコントローラーを編集したいときにこういう記述をする
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
