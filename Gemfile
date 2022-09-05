@@ -37,6 +37,7 @@ gem 'pry'
 gem 'pry-nav'
 gem 'pry-rails'
 gem 'pry-stack_explorer'
+gem "hashid-rails", "~> 1.0"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
