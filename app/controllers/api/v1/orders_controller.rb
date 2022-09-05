@@ -2,7 +2,7 @@ class Api::V1::OrdersController < ApplicationController
   before_action :authenticate_api_v1_user!, only: []
 
 	def show_order
-    order = Order.find(params[:id])
+    order = Order.where(event_name: params[:event_name], users_id: params[:users_id]).first
     order_list = {
 			id: order.id,
       name: order.name,
