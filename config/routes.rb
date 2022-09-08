@@ -20,6 +20,8 @@ Rails.application.routes.draw do
         registrations: 'api/v1/auth/registrations'
       }
 
+      resources :ishikawa_management, only: %i[index show]
+
       namespace :auth do
         resources :sessions, only: %i[index]
       end
