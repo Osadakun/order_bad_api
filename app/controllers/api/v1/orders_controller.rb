@@ -2,7 +2,7 @@ class Api::V1::OrdersController < ApplicationController
   before_action :authenticate_api_v1_user!, only: []
 
 	def show_order
-    order = Order.where(event_name: params[:event_name], users_id: params[:users_id]).first
+    order = Order.where(event_name: params[:event_name], users_id: params[:users_id]).last
     order_list = {
 			id: order.id,
       name: order.name,
@@ -73,6 +73,8 @@ class Api::V1::OrdersController < ApplicationController
       params.require(:order).permit(:id, :name, :enemy_name, :first_double_1, :first_double_2, :first_single, :second_double_1, :second_double_2, :team_id)
     end
 
+    # ダブルスの場合2つカラムが必要になるわけだが，第1ダブルス_1・第1ダブルス_2をここで判断している
+    # DBに保存するためのフォーマットはset_memberで指定される
     def select_player
       @selected_team = Team.find(params[:teams_id])
       @first_double_1 = ''
@@ -102,6 +104,9 @@ class Api::V1::OrdersController < ApplicationController
         end
       end
 
+      # order_kindの中身を順に見ていく．書く種目に該当する選手がDBのどこに保存されているかで判断する
+      # @playersは配列で，頭から順に第1ダブル→シングル→第2ダブルになっている
+      # この中身をshow_orderで見てる
       def set_member
         order_kind = [@first_double_1, @first_double_2, @first_single, @second_double_1, @second_double_2]
         @players = []
