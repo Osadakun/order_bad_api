@@ -1,0 +1,45 @@
+2022-11-24 10:57:43.347 JST [3017] LOG:  starting PostgreSQL 14.6 (Homebrew) on x86_64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2022-11-24 10:57:43.349 JST [3017] LOG:  could not bind IPv6 address "::1": Address already in use
+2022-11-24 10:57:43.349 JST [3017] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2022-11-24 10:57:43.349 JST [3017] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2022-11-24 10:57:43.349 JST [3017] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2022-11-24 10:57:43.349 JST [3017] WARNING:  could not create listen socket for "localhost"
+2022-11-24 10:57:43.349 JST [3017] FATAL:  could not create any TCP/IP sockets
+2022-11-24 10:57:43.350 JST [3017] LOG:  database system is shut down
+2022-11-24 11:03:20.321 JST [3812] LOG:  starting PostgreSQL 14.6 (Homebrew) on x86_64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2022-11-24 11:03:20.323 JST [3812] LOG:  listening on IPv6 address "::1", port 5432
+2022-11-24 11:03:20.324 JST [3812] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-11-24 11:03:20.325 JST [3812] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-11-24 11:03:20.328 JST [3813] LOG:  database system was shut down at 2022-11-24 11:03:07 JST
+2022-11-24 11:03:20.331 JST [3812] LOG:  database system is ready to accept connections
+2022-11-24 11:04:10.126 JST [3951] ERROR:  role "ono" already exists
+2022-11-24 11:04:10.126 JST [3951] STATEMENT:  CREATE ROLE ono PASSWORD 'SCRAM-SHA-256$4096:Ielq4NthYiuC18/U5QtvoA==$cKbmjIFhLVp3bd+UPTdTEHTAnEF2xzB1LjMDpgIo/6M=:M/0SGacG9Rj++5xR4FVNge6oZTbZ3Bop4aV1x3OTfUY=' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN;
+2022-11-24 11:06:11.181 JST [4143] ERROR:  syntax error at or near "," at character 29
+2022-11-24 11:06:11.181 JST [4143] STATEMENT:  ALTER ROLE toshiki SUPERUSER,CREATEROLE;
+2022-11-24 11:07:30.672 JST [4306] FATAL:  database "order_bad_api_development" does not exist
+2022-11-24 13:19:22.961 JST [3812] LOG:  received fast shutdown request
+2022-11-24 13:19:22.961 JST [3812] LOG:  aborting any active transactions
+2022-11-24 13:19:22.963 JST [4523] FATAL:  terminating connection due to administrator command
+2022-11-24 13:19:22.963 JST [5124] FATAL:  terminating connection due to administrator command
+2022-11-24 13:19:22.963 JST [4533] FATAL:  terminating connection due to administrator command
+2022-11-24 13:19:22.963 JST [4666] FATAL:  terminating connection due to administrator command
+2022-11-24 13:19:22.963 JST [3812] LOG:  background worker "logical replication launcher" (PID 3819) exited with exit code 1
+2022-11-24 13:19:22.966 JST [3814] LOG:  shutting down
+2022-11-24 13:19:22.980 JST [3812] LOG:  database system is shut down
+2022-11-24 13:19:27.016 JST [12391] LOG:  starting PostgreSQL 14.6 (Homebrew) on x86_64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2022-11-24 13:19:27.018 JST [12391] LOG:  listening on IPv6 address "::1", port 5432
+2022-11-24 13:19:27.018 JST [12391] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-11-24 13:19:27.019 JST [12391] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-11-24 13:19:27.035 JST [12397] LOG:  database system was shut down at 2022-11-24 13:19:22 JST
+2022-11-24 13:19:27.040 JST [12391] LOG:  database system is ready to accept connections
+2022-11-24 13:19:47.265 JST [12391] LOG:  received fast shutdown request
+2022-11-24 13:19:47.265 JST [12391] LOG:  aborting any active transactions
+2022-11-24 13:19:47.266 JST [12391] LOG:  background worker "logical replication launcher" (PID 12403) exited with exit code 1
+2022-11-24 13:19:47.266 JST [12398] LOG:  shutting down
+2022-11-24 13:19:47.273 JST [12391] LOG:  database system is shut down
+2022-11-24 13:32:25.607 JST [15808] LOG:  starting PostgreSQL 14.6 (Homebrew) on x86_64-apple-darwin21.6.0, compiled by Apple clang version 14.0.0 (clang-1400.0.29.202), 64-bit
+2022-11-24 13:32:25.628 JST [15808] LOG:  listening on IPv6 address "::1", port 5432
+2022-11-24 13:32:25.629 JST [15808] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-11-24 13:32:25.629 JST [15808] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2022-11-24 13:32:25.644 JST [15809] LOG:  database system was shut down at 2022-11-24 13:19:47 JST
+2022-11-24 13:32:25.651 JST [15808] LOG:  database system is ready to accept connections

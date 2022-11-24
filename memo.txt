@@ -1,0 +1,19 @@
+Postgres cluster badorderapi-db created
+  Username:    postgres
+  Password:    v12hQ01C5n52ZlJ
+  Hostname:    badorderapi-db.internal
+  Proxy port:  5432
+  Postgres port:  5433
+  Connection string: postgres://postgres:v12hQ01C5n52ZlJ@badorderapi-db.internal:5432
+
+Save your credentials in a secure place -- you won't be able to see them again!
+
+Connect to postgres
+Any app within the Osadakun organization can connect to this Postgres using the following connection string:
+
+Now that you've set up postgres, here's what you need to understand: https://fly.io/docs/reference/postgres-whats-next/
+
+Postgres cluster badorderapi-db is now attached to badorderapi
+The following secret was added to badorderapi:
+  DATABASE_URL=postgres://badorderapi:NkEX9G1sJLr3Czw@top2.nearest.of.badorderapi-db.internal:5432/badorderapi?sslmode=disable
+Postgres cluster badorderapi-db is now attached to badorderapi
