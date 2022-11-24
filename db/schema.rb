@@ -10,8 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_151137) do
-  create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_11_14_050706) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "orders", force: :cascade do |t|
     t.text "name"
     t.text "enemy_name"
     t.text "first_double_1"
@@ -19,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_151137) do
     t.text "first_single"
     t.text "second_double_1"
     t.text "second_double_2"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "event_name"
@@ -28,7 +44,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_151137) do
     t.index ["users_id"], name: "index_orders_on_users_id"
   end
 
-  create_table "teams", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
     t.string "member1"
     t.string "member2"
     t.string "member3"
@@ -43,7 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_151137) do
     t.index ["users_id"], name: "index_teams_on_users_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -70,5 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_151137) do
 
   add_foreign_key "orders", "teams", column: "teams_id"
   add_foreign_key "orders", "users", column: "users_id"
+  add_foreign_key "posts", "users"
   add_foreign_key "teams", "users", column: "users_id"
 end
