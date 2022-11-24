@@ -20,7 +20,8 @@ default: &default
   host: localhost
   port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  password: <%= ENV.fetch("RAILS_PASSWORD") %>
+  password: asdfasdf
+
 development:
   <<: *default
   database: order_bad_api_development
@@ -84,5 +85,7 @@ test:
 production:
   <<: *default
   database: order_bad_api_production
-  username: order_bad_api
-  password: <%= ENV["ORDER_BAD_API_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: v12hQ01C5n52ZlJ
+  host: badorderapi-db.internal
+  port: 5433
