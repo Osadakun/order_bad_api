@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # devise_for :admin_users, ActiveAdmin::Devise.config
+  root to: 'home#index'
   namespace :api do
     namespace :v1 do
       resources :orders, only: %i[index create show], param: :team_id do
