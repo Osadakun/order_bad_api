@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# Team.create!(event_name: '6年男子', member1: '小野紀輝', member2: '山本雄万', member3: '北村大成', member4: '小林誉周阿', member5: '吉田龍人', member6: '森脇大翔', member7: '笹野章彦', users_id: 3)
-# Team.create!(event_name: '4年女子', member1: '小野紀輝22', member2: '山本雄万22', member3: '北村大成22', member4: '小林誉周阿22', member5: '吉田龍人22', member6: '森脇大翔22', member7: '笹野章彦22', users_id: 3)
+Team.create!(event_name: '6年男子', member1: '石川一郎', member2: '石川二郎', member3: '石川三郎', member4: '石川四郎', member5: '石川五郎', member6: '石川六郎', member7: '石川七郎', users_id: 5)
+Team.create!(event_name: '4年女子', member1: '--石川一郎--', member2: '--石川二郎--', member3: '--石川三郎--', member4: '--石川四郎--', member5: '--石川五郎--', member6: '--石川六郎--', member7: '--石川七郎--', users_id: 5)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
